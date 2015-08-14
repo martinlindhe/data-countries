@@ -7,28 +7,18 @@ class CountryList
      */
     public static function all()
     {
-        $fileName = __DIR__.'/../data/countries.csv';
-        $csv = \League\Csv\Reader::createFromPath($fileName);
+        $fileName = __DIR__.'/../data/countries.json';
 
-        // skip header
-        $csv->setOffset(1);
+        $data = file_get_contents($fileName);
 
         $list = [];
-        $csv->each(function ($c) use (&$list) {
-
-            if (!$c[0]) {
-                return true;
-            }
-
+        foreach (json_decode($data) as $t) {
             $o = new Country;
-            $o->alpha2 = $c[0];
-            $o->alpha3 = $c[1];
-            $o->number = $c[2];
-            $o->name = $c[3];
+            foreach ($t as $key => $value) {
+                $o->{$key} = $value;
+            }
             $list[] = $o;
-            return true;
-        });
-
+        }
         return $list;
     }
 }
