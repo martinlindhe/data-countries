@@ -1,6 +1,6 @@
 <?php
 
-// script to update data files, based onhttps://en.wikipedia.org/wiki/ISO_3166-1
+// script to update data files, based on https://en.wikipedia.org/wiki/ISO_3166-1
 
 require_once __DIR__.'/../vendor/autoload.php';
 
