@@ -118,6 +118,9 @@ function translateName($n)
     if ($n == 'Russian Federation') {
         return 'Russia';
     }
+    if ($n == 'United States of America') {
+        return 'United States';
+    }
 
     return $n;
 }
