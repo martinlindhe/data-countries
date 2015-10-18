@@ -115,6 +115,9 @@ function translateName($n)
     if ($n == 'Pitcairn') {
         return 'Pitcairn Islands';
     }
+    if ($n == 'Russian Federation') {
+        return 'Russia';
+    }
 
     return $n;
 }
